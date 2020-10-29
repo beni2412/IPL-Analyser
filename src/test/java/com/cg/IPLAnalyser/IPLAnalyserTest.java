@@ -48,4 +48,16 @@ public class IPLAnalyserTest {
 		sortedBatsmenList = iplAnalyser.sortBattingData(batsmenList, DataSorter.topStrikeRate);
 		Assert.assertEquals("Ishant Sharma", sortedBatsmenList.get(0).getPlayer());
 	}
+	
+	@Test
+	public void givenBattingData_ShouldReturnMaxSixes() {
+		sortedBatsmenList = iplAnalyser.sortBattingData(batsmenList, DataSorter.maxSixes);
+		Assert.assertEquals("Andre Russell", sortedBatsmenList.get(0).getPlayer());
+	}
+	
+	@Test
+	public void givenBattingData_ShouldReturnMaxFours() {
+		sortedBatsmenList = iplAnalyser.sortBattingData(batsmenList, DataSorter.maxFours);
+		Assert.assertEquals("Shikhar Dhawan", sortedBatsmenList.get(0).getPlayer());
+	}
 }
