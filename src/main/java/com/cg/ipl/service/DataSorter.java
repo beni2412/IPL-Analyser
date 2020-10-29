@@ -18,5 +18,8 @@ public class DataSorter {
 	
 	public static Comparator<IPLBatsmen> bestAvgWithBestStrikeRate = Comparator.comparing(IPLBatsmen::getAvg).thenComparing(IPLBatsmen::getStrikeRate).reversed();
 	
+	public static Comparator<IPLBatsmen> maxRunsWithBestAvg = Comparator.comparing(IPLBatsmen::getRuns).thenComparing(IPLBatsmen::getAvg).reversed();
+	
+	
 	
 	}

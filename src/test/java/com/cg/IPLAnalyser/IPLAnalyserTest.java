@@ -73,4 +73,10 @@ public class IPLAnalyserTest {
 		Assert.assertEquals("MS Dhoni", sortedBatsmenList.get(0).getPlayer());
 	}
 	
+	@Test
+	public void givenBattingData_shouldReturnMaxRunWithBestAvg() {
+		sortedBatsmenList = iplAnalyser.sortBattingData(batsmenList, DataSorter.maxRunsWithBestAvg);
+		Assert.assertEquals("David Warner ", sortedBatsmenList.get(0).getPlayer());
+	}
+	
 }
