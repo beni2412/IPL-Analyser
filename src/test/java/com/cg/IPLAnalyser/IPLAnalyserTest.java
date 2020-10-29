@@ -109,4 +109,9 @@ public class IPLAnalyserTest {
 		Assert.assertEquals("Anukul Roy", sortedBowlersList.get(0).getPlayer());
 	}
 	
+	@Test
+	public void givenBowlingData_shouldReturnMaxWicketsWithBestAvg() {
+		sortedBowlersList = iplAnalyser.sortBowlingData(bowlersList, DataSorter.maxWicketsWithBestAvg);
+		Assert.assertEquals("Imran Tahir", sortedBowlersList.get(0).getPlayer());
+	}
 }
