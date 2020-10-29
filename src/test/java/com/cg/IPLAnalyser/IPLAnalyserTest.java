@@ -97,4 +97,10 @@ public class IPLAnalyserTest {
 		Assert.assertEquals("Shivam Dube", sortedBowlersList.get(0).getPlayer());
 	}
 	
+	@Test
+	public void givenBowlingData_shouldReturnBestBowlingStrikeRateWith4Wor5W() {
+		sortedBowlersList = iplAnalyser.sortBowlingData(bowlersList, DataSorter.bestStrikeRateWith4Wor5W);
+		Assert.assertEquals("Krishnappa Gowtham", sortedBowlersList.get(98).getPlayer());
+	}
+	
 }
