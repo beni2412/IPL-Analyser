@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import com.cg.csvbuilder.CSVBuilderFactory;
@@ -17,6 +19,7 @@ public class IPLAnalyser {
 
 	public static List<IPLBatsmen> batsmenList;
 	public static List<IPLBowler> bowlersList;
+	DataSorter dataSorter = new DataSorter();
 
 	public IPLAnalyser() {
 		batsmenList = null;
@@ -57,5 +60,10 @@ public class IPLAnalyser {
 					"Invalid file location given!! Exception thrown...");
 		}
 
+	}
+	
+	public List<IPLBatsmen> sortBattingData(List<IPLBatsmen> battingList, Comparator<IPLBatsmen> comparator){
+		Collections.sort(battingList, comparator);
+		return (List<IPLBatsmen>) battingList;
 	}
 }
