@@ -25,4 +25,6 @@ public class DataSorter {
 	
 	public static Comparator<IPLBowler> bestBowlingStrikeRate = Comparator.comparing(IPLBowler::getStrikeRate);
 	
+	public static Comparator<IPLBowler> bestBowlingEconomy = Comparator.comparing(IPLBowler::getEconomyRate);
+	
 	}
