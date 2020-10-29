@@ -13,4 +13,7 @@ public class DataSorter {
 	public static Comparator<IPLBatsmen> maxFours = Comparator.comparing(IPLBatsmen::getFours).reversed();
 
 	public static Comparator<IPLBatsmen> maxSixes = Comparator.comparing(IPLBatsmen::getSixes).reversed();	
+	
+	public static Comparator<IPLBatsmen> bestStrikeRateWithBoundaries = Comparator.comparing(IPLBatsmen::getBoundaries).thenComparing(IPLBatsmen::getStrikeRate).reversed();
+	
 	}
