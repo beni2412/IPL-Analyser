@@ -16,4 +16,7 @@ public class DataSorter {
 	
 	public static Comparator<IPLBatsmen> bestStrikeRateWithBoundaries = Comparator.comparing(IPLBatsmen::getBoundaries).thenComparing(IPLBatsmen::getStrikeRate).reversed();
 	
+	public static Comparator<IPLBatsmen> bestAvgWithBestStrikeRate = Comparator.comparing(IPLBatsmen::getAvg).thenComparing(IPLBatsmen::getStrikeRate).reversed();
+	
+	
 	}
