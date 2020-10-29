@@ -29,4 +29,6 @@ public class DataSorter {
 	
 	public static Comparator<IPLBowler> bestStrikeRateWith4Wor5W = bestBowlingStrikeRate.thenComparing(bowler -> bowler.getFiveWickets()+bowler.getFourWickets());
 	
+	public static Comparator<IPLBowler> bestBowlingAvgWithBestStrikeRate= bestBowlingAvg.thenComparing(IPLBowler::getStrikeRate);
+	
 	}
