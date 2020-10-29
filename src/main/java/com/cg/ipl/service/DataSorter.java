@@ -23,4 +23,6 @@ public class DataSorter {
 	
 	public static Comparator<IPLBowler> bestBowlingAvg = Comparator.comparing(IPLBowler::getAvg);
 	
+	public static Comparator<IPLBowler> bestBowlingStrikeRate = Comparator.comparing(IPLBowler::getStrikeRate);
+	
 	}
