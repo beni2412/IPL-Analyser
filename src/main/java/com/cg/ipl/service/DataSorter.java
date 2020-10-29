@@ -3,6 +3,7 @@ package com.cg.ipl.service;
 import java.util.Comparator;
 
 import com.cg.ipl.dto.IPLBatsmen;
+import com.cg.ipl.dto.IPLBowler;
 
 public class DataSorter {
 
@@ -20,6 +21,6 @@ public class DataSorter {
 	
 	public static Comparator<IPLBatsmen> maxRunsWithBestAvg = Comparator.comparing(IPLBatsmen::getRuns).thenComparing(IPLBatsmen::getAvg).reversed();
 	
-	
+	public static Comparator<IPLBowler> bestBowlingAvg = Comparator.comparing(IPLBowler::getAvg);
 	
 	}

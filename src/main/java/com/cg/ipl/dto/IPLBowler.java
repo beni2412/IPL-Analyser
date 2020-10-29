@@ -76,7 +76,7 @@ public class IPLBowler {
 
 	public double getAvg() {
 		if (avg.equals("-"))
-			return 0.0;
+			return 100000;
 		return Double.parseDouble(avg);
 	}
 

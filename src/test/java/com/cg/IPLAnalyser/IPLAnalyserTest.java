@@ -79,4 +79,10 @@ public class IPLAnalyserTest {
 		Assert.assertEquals("David Warner ", sortedBatsmenList.get(0).getPlayer());
 	}
 	
+	@Test
+	public void givenBowlingData_shouldReturnBestBowlingAvg() {
+		sortedBowlersList = iplAnalyser.sortBowlingData(bowlersList, DataSorter.bestBowlingAvg);
+		Assert.assertEquals("Anukul Roy", sortedBowlersList.get(0).getPlayer());
+	}
+	
 }

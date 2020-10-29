@@ -66,4 +66,9 @@ public class IPLAnalyser {
 		Collections.sort(battingList, comparator);
 		return (List<IPLBatsmen>) battingList;
 	}
+	
+	public List<IPLBowler> sortBowlingData(List<IPLBowler> bowlingList, Comparator<IPLBowler> comparator){
+		Collections.sort(bowlingList, comparator);
+		return (List<IPLBowler>) bowlingList;
+	}
 }
