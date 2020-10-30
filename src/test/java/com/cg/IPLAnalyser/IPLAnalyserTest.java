@@ -134,4 +134,10 @@ public class IPLAnalyserTest {
 		sortedBatsmenList = iplAnalyser.sortBattingData(batsmenList, DataSorter.maxCenturyWithBestAvg);
 		Assert.assertEquals("David Warner ", sortedBatsmenList.get(0).getPlayer());
 	}
+	
+	@Test
+	public void givenBattingData_shouldReturnMaxAvgWithZero50OrZero100() {
+		sortedBatsmenList = iplAnalyser.sortBattingData(batsmenList, DataSorter.zero50AndZero100ButBestAverage);
+		Assert.assertEquals("Marcus Stoinis", sortedBatsmenList.get(0).getPlayer());
+	}
 }

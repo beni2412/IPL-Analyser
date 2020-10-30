@@ -48,4 +48,6 @@ public class DataSorter {
 	
 	public static Comparator<IPLBatsmen> maxCenturyWithBestAvg = Comparator.comparing(IPLBatsmen::getHundreds)
 			.thenComparing(IPLBatsmen::getAvg).reversed();
+	
+	public static Comparator<IPLBatsmen> zero50AndZero100ButBestAverage= Comparator.comparing(IPLBatsmen::getAvg);
 }
