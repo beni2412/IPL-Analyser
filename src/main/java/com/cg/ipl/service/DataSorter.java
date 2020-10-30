@@ -42,4 +42,8 @@ public class DataSorter {
 
 	public static Comparator<IPLAllRounder> bestBattingAvgAndBowlingAvg = Comparator
 			.comparing(IPLAllRounder::getAverageRuns).thenComparing(IPLAllRounder::getAverageWickets).reversed();
+
+	public static Comparator<IPLAllRounder> bestAllRounder = Comparator
+			.comparing(IPLAllRounder::getRuns).thenComparing(IPLAllRounder::getWickets).reversed();
+
 }
