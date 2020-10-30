@@ -45,5 +45,7 @@ public class DataSorter {
 
 	public static Comparator<IPLAllRounder> bestAllRounder = Comparator
 			.comparing(IPLAllRounder::getRuns).thenComparing(IPLAllRounder::getWickets).reversed();
-
+	
+	public static Comparator<IPLBatsmen> maxCenturyWithBestAvg = Comparator.comparing(IPLBatsmen::getHundreds)
+			.thenComparing(IPLBatsmen::getAvg).reversed();
 }

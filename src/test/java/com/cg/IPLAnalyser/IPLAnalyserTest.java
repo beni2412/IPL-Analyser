@@ -128,4 +128,10 @@ public class IPLAnalyserTest {
 		sortedAllRounderList = iplAnalyser.sortAllRounderData(batsmenList, bowlersList, DataSorter.bestAllRounder);
 		Assert.assertEquals("Andre Russell", sortedAllRounderList.get(0).getPlayer());
 	}
+	
+	@Test
+	public void givenBattingData_shouldReturnMaxHunderedsWithBestAvg() {
+		sortedBatsmenList = iplAnalyser.sortBattingData(batsmenList, DataSorter.maxCenturyWithBestAvg);
+		Assert.assertEquals("David Warner ", sortedBatsmenList.get(0).getPlayer());
+	}
 }
