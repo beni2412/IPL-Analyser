@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.cg.ipl.dto.IPLAllRounder;
 import com.cg.ipl.dto.IPLBatsmen;
 import com.cg.ipl.dto.IPLBowler;
 import com.cg.ipl.dto.IPLException;
@@ -21,6 +22,7 @@ public class IPLAnalyserTest {
 	public IPLAnalyser iplAnalyser;
 	public List<IPLBatsmen> sortedBatsmenList = null;
 	public List<IPLBowler> sortedBowlersList = null;
+	public List<IPLAllRounder> sortedAllRounderList=null;
 
 	@Before
 	public void initialize() throws IPLException {
@@ -113,5 +115,11 @@ public class IPLAnalyserTest {
 	public void givenBowlingData_shouldReturnMaxWicketsWithBestAvg() {
 		sortedBowlersList = iplAnalyser.sortBowlingData(bowlersList, DataSorter.maxWicketsWithBestAvg);
 		Assert.assertEquals("Imran Tahir", sortedBowlersList.get(0).getPlayer());
+	}
+	
+	@Test
+	public void givenAllrounderData_shouldReturnMaxBattingAndBowlingAvg() {
+		sortedAllRounderList = iplAnalyser.sortAllRounderData(batsmenList, bowlersList, DataSorter.bestBattingAvgAndBowlingAvg);
+		Assert.assertEquals("Andre Russell", sortedAllRounderList.get(0).getPlayer());
 	}
 }

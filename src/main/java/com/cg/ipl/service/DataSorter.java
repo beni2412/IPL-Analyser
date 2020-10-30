@@ -2,6 +2,7 @@ package com.cg.ipl.service;
 
 import java.util.Comparator;
 
+import com.cg.ipl.dto.IPLAllRounder;
 import com.cg.ipl.dto.IPLBatsmen;
 import com.cg.ipl.dto.IPLBowler;
 
@@ -38,4 +39,7 @@ public class DataSorter {
 
 	public static Comparator<IPLBowler> maxWicketsWithBestAvg = Comparator.comparing(IPLBowler::getWickets)
 			.thenComparing(bestBowlingAvg).reversed();
+
+	public static Comparator<IPLAllRounder> bestBattingAvgAndBowlingAvg = Comparator
+			.comparing(IPLAllRounder::getAverageRuns).thenComparing(IPLAllRounder::getAverageWickets).reversed();
 }

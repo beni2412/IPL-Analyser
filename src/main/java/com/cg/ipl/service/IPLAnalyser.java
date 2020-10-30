@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.cg.csvbuilder.CSVBuilderFactory;
 import com.cg.csvbuilder.ICSVBuilder;
@@ -66,9 +68,29 @@ public class IPLAnalyser {
 		Collections.sort(battingList, comparator);
 		return (List<IPLBatsmen>) battingList;
 	}
-	
+		
 	public List<IPLBowler> sortBowlingData(List<IPLBowler> bowlingList, Comparator<IPLBowler> comparator){
 		Collections.sort(bowlingList, comparator);
 		return (List<IPLBowler>) bowlingList;
+	}
+	
+	public List<IPLAllRounder> sortAllRounderData(List<IPLBatsmen> battingList, List<IPLBowler> bowlingList, Comparator<IPLAllRounder> comparator){
+		List<IPLAllRounder> allRounderList = getAllRounderPlayers( battingList, bowlingList);
+		Collections.reverse(allRounderList);
+		return (List<IPLAllRounder>) allRounderList.stream().sorted(comparator).collect(Collectors.toList());
+	}
+	
+	public List<IPLAllRounder> getAllRounderPlayers(List<IPLBatsmen> battingList, List<IPLBowler> bowlingList) {
+		List<IPLAllRounder> allRounderList = new ArrayList<>();
+		battingList.stream().forEach(batsman -> {
+			IPLBowler bowlers = bowlingList.stream()
+					.filter(bowler -> bowler.getPlayer().equalsIgnoreCase(batsman.getPlayer())).findFirst()
+					.orElse(null);
+			if (bowlers != null) {
+				allRounderList.add(new IPLAllRounder(batsman.getPlayer(), batsman.getRuns(), bowlers.getWickets(),
+						batsman.getAvg(), bowlers.getAvg()));
+			}
+		});
+		return allRounderList;
 	}
 }
